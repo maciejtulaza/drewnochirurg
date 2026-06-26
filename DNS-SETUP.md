@@ -15,46 +15,50 @@ Your site is now pushed to GitHub. Follow these steps to complete the setup:
 
 Log in to your domain registrar where you bought **drewnochirurg.pl** and add these DNS records:
 
-#### Option A: Using Apex Domain (drewnochirurg.pl)
+#### Rekordy A (dla głównej domeny drewnochirurg.pl)
 
-Add these **A records**:
+Dodaj **4 rekordy A** - każdy z innym adresem IP:
 
 ```
-Type: A
-Name: @ (or leave blank for root domain)
-Value: 185.199.108.153
-TTL: 3600
-
-Type: A
-Name: @
-Value: 185.199.109.153
-TTL: 3600
-
-Type: A
-Name: @
-Value: 185.199.110.153
-TTL: 3600
-
-Type: A
-Name: @
-Value: 185.199.111.153
+Typ: A
+Nazwa: @ (lub puste pole dla korzenia domeny)
+Wartość: 185.199.108.153
 TTL: 3600
 ```
 
-#### Option B: Using www subdomain (recommended for both)
-
-Add a **CNAME record** for www:
-
 ```
-Type: CNAME
-Name: www
-Value: maciejtulaza.github.io
+Typ: A
+Nazwa: @
+Wartość: 185.199.109.153
 TTL: 3600
 ```
 
-#### Recommendation: Configure both!
+```
+Typ: A
+Nazwa: @
+Wartość: 185.199.110.153
+TTL: 3600
+```
 
-Set up both the A records (for drewnochirurg.pl) and the CNAME record (for www.drewnochirurg.pl) so both URLs work.
+```
+Typ: A
+Nazwa: @
+Wartość: 185.199.111.153
+TTL: 3600
+```
+
+#### Rekord CNAME (opcjonalnie dla www.drewnochirurg.pl)
+
+Jeśli chcesz żeby działało też **www.drewnochirurg.pl**, dodaj:
+
+```
+Typ: CNAME
+Nazwa: www
+Wartość: maciejtulaza.github.io
+TTL: 3600
+```
+
+**WAŻNE:** CNAME **nie może** być użyty dla korzenia domeny (@) - tylko dla subdomen typu "www". Dla głównej domeny używamy rekordów A.
 
 ### 3. Wait for DNS Propagation
 
