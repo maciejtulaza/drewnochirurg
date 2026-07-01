@@ -110,6 +110,12 @@ nav {
     justify-self: center;
 }
 
+.nav-links li:not(:last-child)::after {
+    content: " |";
+    margin-left: 2rem;
+    color: var(--text-light);
+}
+
 .nav-links a {
     text-decoration: none;
     color: var(--text-dark);
@@ -490,10 +496,24 @@ footer {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     z-index: 10000;
     transition: bottom 0.3s ease;
+    max-width: 90%;
+    text-align: center;
 }
 
 .toast-notification.show {
     bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .toast-notification {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
+        bottom: -100px;
+    }
+
+    .toast-notification.show {
+        bottom: 20px;
+    }
 }
 
 @keyframes shake {
@@ -603,27 +623,46 @@ footer {
 @media (max-width: 768px) {
     nav {
         grid-template-columns: 1fr;
-        gap: 1rem;
-        text-align: center;
+        gap: 0.8rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .logo {
+        justify-self: center;
     }
 
     .logo-text {
         align-items: center;
     }
 
-    .nav-links {
-        gap: 1rem;
-        justify-content: center;
+    .logo-name {
+        font-size: 1.3rem;
     }
 
-    .header-social {
-        order: 3;
+    .logo-tagline {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+        justify-content: center;
+        justify-self: center;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
     }
 
     .header-contact {
         align-items: center;
-        font-size: 0.8rem;
-        order: 4;
+        justify-self: center;
+        gap: 0.4rem;
+    }
+
+    .header-phone,
+    .header-email {
+        font-size: 0.85rem;
     }
 
     .hero-wrapper h1 {
