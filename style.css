@@ -621,6 +621,19 @@ footer {
 }
 
 @media (max-width: 768px) {
+    section {
+        padding: 2.5rem 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .section-subtitle {
+        margin-bottom: 2rem;
+    }
+
     nav {
         grid-template-columns: 1fr;
         gap: 0.8rem;
@@ -640,8 +653,9 @@ footer {
     }
 
     .logo-tagline {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         text-align: center;
+        letter-spacing: 0.1rem;
     }
 
     .nav-links {
@@ -663,6 +677,10 @@ footer {
     .header-phone,
     .header-email {
         font-size: 0.85rem;
+    }
+
+    .hero {
+        min-height: 100vh;
     }
 
     .hero-wrapper h1 {
@@ -696,14 +714,39 @@ footer {
     .gallery-toggle-btn {
         float: none;
         display: block;
-        margin: 0 auto 2rem;
+        margin: 2.5rem auto 2rem;
         position: relative;
         top: 0;
+        font-size: 0.9rem;
+        padding: 0.9rem 2rem;
     }
 
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .contact-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-card h3 {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-card p {
+        font-size: 1rem;
+    }
+
+    .card-hint {
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
     }
 
     .footer-content {

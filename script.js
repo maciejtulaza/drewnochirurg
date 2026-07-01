@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Fix hero padding based on header height
+    function adjustHeroPadding() {
+        const header = document.querySelector('header');
+        const hero = document.querySelector('.hero');
+        if (header && hero && window.innerWidth <= 768) {
+            const headerHeight = header.offsetHeight;
+            hero.style.paddingTop = (headerHeight + 20) + 'px';
+        } else if (hero) {
+            hero.style.paddingTop = '';
+        }
+    }
+
+    adjustHeroPadding();
+    window.addEventListener('resize', adjustHeroPadding);
+
     const showMoreBtn = document.getElementById('showMoreBtn');
     const hiddenItems = document.querySelectorAll('.gallery-item.hidden');
     let isExpanded = false;
