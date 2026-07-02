@@ -767,6 +767,16 @@ footer {
     }
 
     .social-sidebar {
-        display: none;
+        top: auto;
+        bottom: 1rem;
+        right: 1rem;
+        transform: none;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .social-sidebar-link {
+        width: 45px;
+        height: 45px;
     }
 }
